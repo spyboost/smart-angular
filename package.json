@@ -13,6 +13,7 @@
     "coffee-script": "1.4.x"
   },
   "devDependencies": {
+    "exec": "0.0.x",
     "testacular": "0.4.x",
     "phantomjs": "0.2.x"
   },
