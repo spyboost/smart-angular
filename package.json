@@ -15,6 +15,7 @@
     "testacular": "0.4.x",
     "phantomjs": "0.2.x"
   },
+  "preferGlobal": true,
   "scripts": {
     "test": "./node_modules/coffee-script/bin/cake test"
   },
