@@ -16,7 +16,14 @@
   google_ad_height = 90;
   //-->
   </script>
-  <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+  <script>
+    window.addEventListener('load', function(){
+      var script = document.createElement('script');
+      script.src = "//pagead2.googlesyndication.com/pagead/show_ads.js";
+      document.querySelector('.ad').appendChild(script);
+    });
+  </script>
+  <!--<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>-->
 </div>
 <div class="container">
   <div class="hero-unit">
