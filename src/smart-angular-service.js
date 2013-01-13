@@ -38,4 +38,37 @@
       }
     };
   });
+
+  //TODO: test
+  module.service('cookieService', function($window){
+    var doc = $window.document;
+    function save(name, value, expires) {
+      var date = new Date(expires);
+      var expiresString = "; expires=" + date.toGMTString();
+      doc.cookie = name + "=" + value + expiresString +"; path=/";
+    }
+
+    function get(name) {
+      var nameEQ = name + "=";
+      var ca = doc.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ')
+          c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0)
+          return c.substring(nameEQ.length, c.length);
+      }
+      return undefined;
+    }
+
+    function remove(name) {
+      save(name, "", -1);
+    }
+
+    return {
+      save: save,
+      get: get,
+      remove: remove
+    };
+  });
 })();
