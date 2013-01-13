@@ -1,0 +1,4 @@
+smart-angular
+=============
+
+AngularJS utilities
