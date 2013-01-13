@@ -8,14 +8,15 @@
     "js",
     "javascript"
   ],
+  "preferGlobal": true,
   "dependencies": {
-    "coffee-script": "1.4.x"
+    "coffee-script": "1.4.x",
+    "exec": "0.0.x"
   },
   "devDependencies": {
     "testacular": "0.4.x",
     "phantomjs": "0.2.x"
   },
-  "preferGlobal": true,
   "scripts": {
     "test": "./node_modules/coffee-script/bin/cake test"
   },
