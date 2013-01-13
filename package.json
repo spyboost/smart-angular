@@ -10,8 +10,7 @@
   ],
   "preferGlobal": true,
   "dependencies": {
-    "coffee-script": "1.4.x",
-    "exec": "0.0.x"
+    "coffee-script": "1.4.x"
   },
   "devDependencies": {
     "testacular": "0.4.x",
