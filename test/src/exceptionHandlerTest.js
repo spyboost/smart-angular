@@ -20,13 +20,20 @@ describe('$exceptionHandler', function(){
   }
 
   beforeEach(function(){
-    module('smart.service');
+    module('smart.service', function($provide){
+      $provide.value('paramService', {
+        param: function(data){
+          return angular.toJson(data);
+        }
+      });
+    });
     inject(function($rootScope, $http, $httpBackend, $exceptionHandler, $log, exceptionHandlerUrl){
       $_scope = $rootScope.$new();
       $_http = $http;
       $_httpBackend = $httpBackend;
       $_exceptionHandler = $exceptionHandler;
       $_log = $log;
+      _exceptionHandlerUrl = exceptionHandlerUrl;
     });
     error = new Error('bum');
     $_httpBackend.expectPOST(_exceptionHandlerUrl).respond(function(method, url, data, headers){
