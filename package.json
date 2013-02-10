@@ -1,0 +1,34 @@
+{
+  "name": "smart-angular",
+  "description": "Smart AngularJS utilities",
+  "author": "Sergey Chunayev <spyboost@gmail.com>",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "js",
+    "javascript"
+  ],
+  "preferGlobal": true,
+  "dependencies": {
+    "coffee-script": "1.4.x"
+  },
+  "devDependencies": {
+    "exec": "0.0.x",
+    "testacular": "0.4.x",
+    "phantomjs": "0.2.x"
+  },
+  "scripts": {
+    "test": "./node_modules/coffee-script/bin/cake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spyboost/smart-angular.git"
+  },
+  "bin": {
+    "testacular": "./bin/testacular"
+  },
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "version": "0.0.1"
+}

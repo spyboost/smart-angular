@@ -10,7 +10,7 @@
         if(!(e instanceof Error))
           e = new Error(e);
         e.$exceptionHandler = true;
-        var http = $injector.get('$http');
+        var http = $injector.get('http');
         var param = {
           message: e.message,
           stack: e.stack
@@ -24,6 +24,7 @@
     };
   });
 
+  //TODO: check if the returned value is promise and call then with error posted to exception url.
   module.service('errorHandler', function($exceptionHandler){
     return {
       handle: function(f){
@@ -71,4 +72,34 @@
       remove: remove
     };
   });
+
+  module.service('paramService', function(){
+    return {
+      param: function(data){
+        return $.param(data, true);
+      }
+    }
+  });
+
+  //TODO: test
+  module.service('http', function($http, paramService){
+    function param(data){
+      return data ? paramService.param(data, true) : undefined;
+    }
+
+    function post(url, data){
+      return $http.post(url, param(data), {headers:{'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}});
+    }
+
+    function get(url, params){
+      return $http.get(url, {params: params, headers:{'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}});
+    }
+
+    return {
+      post: post,
+      get: get
+    };
+  });
+
 })();
+

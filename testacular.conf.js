@@ -7,12 +7,16 @@
 
 
 // base path, that will be used to resolve files and exclude
-basePath = '../..';
+basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
-  JASMINE_ADAPTER
+  JASMINE_ADAPTER,
+	'test/lib/angular-1.0.3/angular.js',
+	'test/lib/angular-1.0.3/angular-mocks.js',
+	'src/smart-angular-service.js',
+	'test/src/*.js'
 ];
 
 // list of files to exclude
@@ -32,7 +36,7 @@ junitReporter = {
 
 // web server port
 // CLI --port 9876
-port = 9877;
+port = 9876;
 
 // cli runner port
 // CLI --runner-port 9100
