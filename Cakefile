@@ -1,4 +1,3 @@
-exec = require('exec');
 task 'test', 'run all tests suites', ->
   console.log 'Running front-end tests'
   phantom_bin = "PHANTOMJS_BIN=#{__dirname}/node_modules/phantomjs/lib/phantom/bin/phantomjs"
