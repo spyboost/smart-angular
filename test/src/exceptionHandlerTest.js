@@ -54,7 +54,6 @@ describe('$exceptionHandler', function(){
     cause = 'Test cause';
     $_exceptionHandler(error, cause);
     $_httpBackend.flush();
-    expect(false).toBe(true);
     doExpect();
   });
 });
