@@ -9,26 +9,15 @@
     "javascript"
   ],
   "preferGlobal": true,
-  "dependencies": {
-    "coffee-script": "1.4.x"
-  },
   "devDependencies": {
-    "exec": "0.0.x",
-    "testacular": "0.4.x",
-    "phantomjs": "0.2.x"
+    "testacular": "~0.6"
   },
   "scripts": {
-    "test": "./node_modules/coffee-script/bin/cake test"
+    "test": "./node_modules/.bin/testacular start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/spyboost/smart-angular.git"
-  },
-  "bin": {
-    "testacular": "./bin/testacular"
-  },
-  "engines": {
-    "node": ">= 0.8.4"
   },
   "version": "0.0.1"
 }
